@@ -1,0 +1,302 @@
+:root {
+  --bg: #141510;
+  --panel: #23241b;
+  --paper: #ece4d2;
+  --muted: #b8b29f;
+  --dim: #90927e;
+  --gold: #c4a76b;
+  --line: rgba(194, 179, 135, .16);
+}
+
+.garden {
+  background: radial-gradient(ellipse at 50% 12%, #33332144, transparent 58%), var(--bg);
+}
+.paper-grain { opacity: .035; }
+.site-header { height: 100px; padding-inline: 4.5%; max-width: 1900px; }
+.brand { gap: 13px; }
+.brand-name { color: #e5dbc3; }
+.brand-sub { color: #9e9b85; }
+.nav-link { color: #bbb7a6; font-size: 12px; }
+.site-header nav { gap: 28px; }
+.main-home { min-height: calc(100svh - 173px); padding: 15px 24px 36px; position: relative; z-index: 1; }
+.home { padding: 0; max-width: 1000px; }
+.home-inner { max-width: 650px; }
+.home-seal { display: flex; align-items: center; justify-content: center; gap: 20px; color: var(--gold); opacity: .8; margin: 0 auto 24px; }
+.home-seal > span { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, #a48c5466); }
+.home-seal > span:last-child { transform: rotate(180deg); }
+.home h1 {
+  font-size: clamp(44px, 4.4vw, 66px); line-height: 1.38; letter-spacing: .15em; font-weight: 400;
+  padding-left: .15em; color: #e3d0a3; text-shadow: 0 3px 30px #c3a26815;
+}
+.home-subtitle { color: #b8b5a4; font-size: 13px; line-height: 2.05; letter-spacing: 1.4px; margin: 22px auto 31px; }
+.question-form {
+  border: 1px solid #b79a5b66; border-radius: 3px; padding: 22px 25px 19px;
+  background: linear-gradient(118deg, #353528e8, #22251df5 70%);
+  box-shadow: 0 24px 80px #0005, inset 0 1px #dcc58c0a;
+}
+.question-form::before, .question-form::after { content: ""; position: absolute; width: 20px; height: 20px; pointer-events: none; border-color: #cab174; border-style: solid; opacity: .8; }
+.question-form::before { left: -1px; top: -1px; border-width: 1px 0 0 1px; }
+.question-form::after { right: -1px; bottom: -1px; border-width: 0 1px 1px 0; }
+.question-form:focus-within { border-color: #c5a96bc7; box-shadow: 0 24px 80px #0005, 0 0 40px #b99b4210; }
+.question-form textarea { font-size: 16px; min-height: 76px; line-height: 1.9; letter-spacing: 1px; }
+.question-form textarea::placeholder { font-family: var(--serif); color: #cbc2aa; opacity: .8; }
+.question-form-bottom { margin-top: 8px; }
+.input-hint { color: #a5a38e; font-size: 10px; }
+.primary-button { background: linear-gradient(115deg, #d1b77c, #b69a61); color: #23251a; border: 1px solid #dac28b; border-radius: 2px; padding: 13px 19px; font-size: 12px; }
+.primary-button:hover:not(:disabled) { background: #dbc48c; color: #1b2016; }
+.suggestions { margin-top: 23px; }
+.suggestion-label { font-size: 10px; color: #a9a58e; letter-spacing: 1.5px; margin-bottom: 12px; }
+.suggestions > div { gap: 15px; }
+.suggestions button { border: 0; border-bottom: 1px solid #bdaf7a30; border-radius: 0; padding: 7px 0; background: none; color: #b6b39f; font-size: 10px; gap: 7px; }
+.suggestions button:hover { background: none; color: #dfc995; border-color: #c5a76d; }
+.waiting-philosophers { color: #a7a48e; margin-top: 29px; font-size: 10px; letter-spacing: 1px; }
+.mini-portraits > span { background: #2a2e23; border-color: #817550; }
+.site-footer { min-height: 73px; padding: 17px 4.5% 22px; max-width: 1900px; color: #a09e88; }
+.site-footer > div:last-child { gap: 23px; }
+.site-footer .footer-sources { color: #b5b09b; }
+.intro-replay { display: inline-flex; align-items: center; gap: 7px; }
+.site-footer > div:first-child button { text-decoration-color: #7c7559; }
+
+/* One slow scene: monumental typography, carved figures and a single moving light source. */
+.thought-atmosphere { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; transition: opacity 1.2s; }
+.vault-glow { position: absolute; inset: -10%; background: radial-gradient(ellipse at 51% 26%, #b4a36b12, transparent 48%), radial-gradient(ellipse at 4% 71%, #625e3220, transparent 38%); animation: vault-light 22s ease-in-out infinite alternate; }
+.vault-architecture { position: absolute; top: -7%; left: 50%; transform: translateX(-50%); height: 113%; width: 100%; min-height: 840px; min-width: 1200px; opacity: .9; }
+.light-shaft { position: absolute; width: 39%; height: 160%; top: -40%; left: 32%; transform-origin: 50% 0; background: linear-gradient(100deg, transparent 22%, #e5ce8c06 43%, #b9a76b0c 48%, transparent 69%); filter: blur(12px); animation: shaft-drift 28s ease-in-out infinite alternate; }
+.shaft-two { left: 9%; width: 40%; opacity: .5; animation-delay: -13s; }
+.quotation-mural { position: absolute; inset: 0; transition: opacity 1.2s; mask-image: radial-gradient(ellipse 31% 42% at 50% 52%, #0000 45%, #000 100%); }
+.mural-inscription { position: absolute; display: flex; flex-direction: column; font-family: var(--serif); color: #ac8e4b; font-weight: 400; animation: mural-breathe var(--mural-time) ease-in-out infinite; animation-delay: var(--mural-delay); will-change: transform, opacity; }
+.mural-inscription > span { background: linear-gradient(135deg, #756d41, #cfb371 40%, #b99b5b 60%, #6c643f); background-clip: text; -webkit-text-fill-color: transparent; }
+.mural-inscription small { font-family: var(--serif); font-size: 11px; letter-spacing: 6px; margin-top: 20px; opacity: .8; }
+.mural-unity { writing-mode: vertical-rl; left: 6%; top: 16%; font-size: clamp(40px, 4.8vw, 78px); letter-spacing: .15em; line-height: 1.5; height: 69%; }
+.mural-unity small { margin-top: 5px; margin-right: 18px; }
+.mural-examine { right: -5%; top: 15%; font-size: clamp(40px, 4.6vw, 76px); white-space: nowrap; letter-spacing: .09em; }
+.mural-action { left: 13%; bottom: 7%; font-size: clamp(50px, 6.9vw, 110px); letter-spacing: .14em; white-space: nowrap; }
+.mural-think { right: 8%; bottom: 10%; writing-mode: vertical-rl; font-size: clamp(30px, 3.1vw, 52px); letter-spacing: .15em; height: 53%; }
+.mural-think small { margin-top: 5px; margin-right: 15px; }
+.mural-full-quote { position: absolute; bottom: 8%; left: 40%; display: flex; flex-direction: column; gap: 14px; font-family: var(--serif); letter-spacing: 4px; font-size: 17px; color: #ab955f; opacity: .16; white-space: nowrap; }
+.mural-full-quote small { font-size: 9px; letter-spacing: 3px; }
+.hall-statue { position: absolute; width: min(27vw, 430px); bottom: 9%; mask-image: linear-gradient(#0000, #000 16%, #000 72%, #0000 100%); opacity: .33; }
+.hall-statue > .stone-portrait { width: 100%; height: auto; display: block; }
+.hall-statue > span { position: absolute; bottom: 1%; left: 50%; text-align: center; transform: translateX(-50%); color: #cbb585; font-family: var(--serif); font-size: 12px; letter-spacing: 5px; white-space: nowrap; }
+.hall-statue small { display: block; font-family: var(--sans); font-size: 8px; letter-spacing: 2px; margin-top: 10px; }
+.statue-west { right: -1%; }
+.statue-east { left: -1.5%; width: min(25vw, 400px); opacity: .22; bottom: 4%; }
+.hall-horizon { position: absolute; bottom: 7%; left: -10%; width: 120%; height: 13%; background: radial-gradient(ellipse at 50% 0%, #a08b3d0a, transparent 70%); border-top: 1px solid #b9a4720b; transform: perspective(350px) rotateX(58deg); }
+.atmosphere-vignette { position: absolute; inset: 0; background: linear-gradient(0deg, #141510 0%, transparent 23%, transparent 78%, #14151099), radial-gradient(ellipse at center, transparent 40%, #0d100975); }
+.dust-field { position: absolute; inset: 0; opacity: .6; }
+.dust-field i { position: absolute; width: var(--dust-size); height: var(--dust-size); border-radius: 50%; background: #d6bf83; box-shadow: 0 0 7px #c4a76270; animation: dust-rise var(--dust-time) linear infinite; animation-delay: var(--dust-delay); opacity: 0; }
+.input-focused .quotation-mural { opacity: .35; }
+.input-focused .hall-statue { opacity: .15; }
+.atmosphere-quiet { opacity: .23; position: fixed; }
+.atmosphere-quiet .quotation-mural, .atmosphere-quiet .hall-statue, .atmosphere-quiet .dust-field { display: none; }
+@keyframes mural-breathe { 0%, 100% { opacity: .08; transform: translate3d(0, 8px, 0); } 40%, 62% { opacity: .29; transform: translate3d(-9px, -8px, 0); } }
+@keyframes vault-light { from { opacity: .65; transform: scale(1); } to { opacity: 1; transform: scale(1.1) translateX(1%); } }
+@keyframes shaft-drift { from { transform: rotate(-23deg); opacity: .35; } to { transform: rotate(-11deg); opacity: .9; } }
+@keyframes dust-rise { 0% { opacity: 0; transform: translate3d(0, 40px, 0); } 25% { opacity: .55; } 75% { opacity: .3; } 100% { opacity: 0; transform: translate3d(35px, -95px, 0); } }
+.motion-paused .thought-atmosphere *, .motion-paused .thought-atmosphere *::before { animation-play-state: paused !important; }
+.motion-paused .mural-inscription { opacity: .18; }
+
+/* The conversation adopts the same palette, with the scenery receding behind the words. */
+.main-dialogue { min-height: calc(100svh - 173px); }
+.council-card { border-color: #bca7754d; background: linear-gradient(180deg, #d3bb7220, transparent 65%); padding-top: 8px; }
+.card-person { min-height: 157px; }
+.card-person h2 { color: #e2d6ba; }
+.card-response h3 { color: #e5d8b8; }
+.card-response > p { font-size: 13px; color: #c9c5b1; line-height: 2.15; }
+.card-response > p.card-question { color: #d2c6a7; font-size: 14px; }
+.continue-button { background: #a68b4220; border-color: #b3a47442; color: #d7cbac; border-radius: 3px; }
+.card-swap, .back-link { color: #aaa68f; }
+.roman-name { color: #989c89; }
+.mode-tag.live { color: #bbc3a4; border-color: #a5af7644; }
+.mode-tag.live > span { background: #aab68e; }
+.user-message { background: #a7986020; border-color: #bbaa7540; border-radius: 5px; }
+.composer { background: linear-gradient(120deg, #303124, #22271d); border-color: #b59e6266; border-radius: 4px; }
+.composer textarea::placeholder { color: #a4a68d; }
+.modal { background: #25281e; box-shadow: 0 30px 120px #0009; border-color: #b6a46a50; }
+.modal::backdrop { background: #090d09b8; backdrop-filter: blur(8px); }
+.library-person { background: #b5a46906; border-color: #b8a87326; border-radius: 4px; }
+.library-person:hover:not(:disabled) { background: #a2934a12; border-color: #baa57566; }
+.connection-panel details { background: #11170c50; }
+.notice { background: #32392a; border-color: #bcac7866; color: #e2d9bf; }
+.sidebar-lens, .source-intro, .source-list p, .connection-panel > p, .connection-panel details, .about-copy > p { color: #c1c1ab; }
+.message-content p { color: #d2d2bd; font-size: 14px; }
+.user-message p { color: #dedfc9; }
+.message-author, .message-label, .thread-date, .composer-bottom > span, .composer-disclaimer { color: #a4a990; }
+.modal-content h3 { color: #dedbc4; }
+.setting-row p, .setting-privacy p, .library-person p, .library-tradition, .history-people, .history-date { color: #b5b7a0; }
+.source-list strong { color: #d9cda9; }
+.thread, .modal, .council-intro h1 { scrollbar-color: #686d4b transparent; }
+
+/* A 7.6-second, silent opening. The three cuts have soft overlaps, not bright flashes. */
+.cinematic-intro { position: fixed; inset: 0; z-index: 90; overflow: hidden; color: #e4d3ab; background: #11140f; animation: intro-arrive .4s ease-out both; }
+.intro-grain { position: absolute; inset: 0; z-index: 8; pointer-events: none; opacity: .045; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E"); }
+.intro-topline, .intro-bottomline { position: absolute; left: 5%; right: 5%; z-index: 10; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 2px; color: #adab92; }
+.intro-topline { top: 5%; }
+.intro-topline > button { padding: 10px 0 10px 15px; display: flex; gap: 12px; align-items: center; color: #d1bf96; font-size: 12px; letter-spacing: 1px; }
+.intro-bottomline { bottom: 5%; gap: 30px; font-size: 10px; }
+.intro-progress { height: 1px; flex: 1; background: #a48e552b; }
+.intro-progress i { display: block; height: 1px; background: #b69c63; width: 100%; transform-origin: left; animation: intro-progress 7.6s linear both; }
+.intro-scenes { position: absolute; inset: 0; }
+.intro-scene { position: absolute; inset: 0; opacity: 0; overflow: hidden; animation: intro-scene 7.6s both linear; }
+.scene-socrates { background: radial-gradient(ellipse at 64% 60%, #57604a42, transparent 61%), #11150f; }
+.scene-zhuangzi { background: radial-gradient(ellipse at 34% 55%, #685b3740, transparent 62%), #17170e; animation-name: intro-scene-two; }
+.scene-beauvoir { background: radial-gradient(ellipse at 65% 50%, #4e524b50, transparent 65%), #131611; animation-name: intro-scene-three; }
+.intro-epoch { position: absolute; right: -1%; top: 10%; font-family: var(--serif); font-size: clamp(150px, 24vw, 420px); letter-spacing: -.03em; color: #c0a26a; white-space: nowrap; opacity: .045; }
+.intro-sculpture { position: absolute; left: 7%; top: 12%; width: min(46vw, 630px); height: 88%; mask-image: linear-gradient(#000, #000 65%, transparent 100%); }
+.intro-sculpture .stone-portrait { height: 100%; width: 100%; object-fit: contain; opacity: .9; }
+.intro-words { position: absolute; left: 49%; right: 9%; top: 50%; transform: translateY(-50%); }
+.intro-era { display: block; color: #a4a88d; font-size: 11px; letter-spacing: 3px; margin-bottom: 25px; }
+.intro-words blockquote { font-family: var(--serif); font-size: clamp(30px, 3vw, 48px); line-height: 1.85; letter-spacing: .12em; font-weight: 400; margin: 0; text-wrap: balance; }
+.intro-citation { display: flex; flex-direction: column; gap: 11px; margin-top: 28px; padding-left: 18px; border-left: 1px solid #ac925552; }
+.intro-citation > span { font-family: var(--serif); font-size: 16px; letter-spacing: 5px; }
+.intro-citation > small { font-size: 9px; letter-spacing: 1px; color: #a9a78f; line-height: 1.8; }
+.intro-frame { position: absolute; inset: 15% 5%; border-top: 1px solid #c2a26520; border-bottom: 1px solid #c2a26520; pointer-events: none; }
+.scene-zhuangzi .intro-sculpture { left: 48%; }
+.scene-zhuangzi .intro-words { left: 12%; right: 49%; }
+.scene-zhuangzi .intro-epoch { left: -1%; right: auto; }
+.intro-resolution { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, #8e7c3e14, transparent 60%), #141710; animation: intro-resolution 7.6s both; }
+.intro-resolution > svg { color: #bba16a; margin-bottom: 27px; }
+.intro-resolution h2 { font-family: var(--serif); font-size: clamp(70px, 7vw, 106px); font-weight: 400; letter-spacing: .38em; padding-left: .38em; color: #d7c18e; }
+.intro-resolution-rule { display: block; height: 1px; width: 60px; background: #a88f525c; margin: 28px auto 22px; }
+.intro-resolution > p { font-family: var(--serif); font-size: 17px; letter-spacing: 5px; color: #c4baa0; }
+@keyframes intro-arrive { from { opacity: 0; } to { opacity: 1; } }
+@keyframes intro-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes intro-scene { 0% { opacity: 0; transform: scale(1.08); } 6%, 24% { opacity: 1; } 31%, 100% { opacity: 0; transform: scale(1); } }
+@keyframes intro-scene-two { 0%, 23% { opacity: 0; transform: scale(1.07); } 30%, 49% { opacity: 1; } 56%, 100% { opacity: 0; transform: scale(1); } }
+@keyframes intro-scene-three { 0%, 48% { opacity: 0; transform: scale(1.06); } 55%, 73% { opacity: 1; } 80%, 100% { opacity: 0; transform: scale(1); } }
+@keyframes intro-resolution { 0%, 73% { opacity: 0; transform: scale(1.03); } 84%, 95% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1); } }
+.intro-reduced { animation: none; }
+.intro-reduced .intro-scenes, .intro-reduced .intro-progress { display: none; }
+.intro-reduced .intro-resolution { animation: none; opacity: 1; transform: none; }
+
+@media (min-width: 1800px) {
+  .home-inner { max-width: 730px; }
+  .home h1 { font-size: 73px; }
+  .home-subtitle { font-size: 14px; }
+  .mural-unity { left: 10%; }
+  .statue-west { right: 4%; }
+  .statue-east { left: 4%; }
+}
+@media (max-width: 1150px) {
+  .mural-unity { left: 2%; font-size: 54px; }
+  .mural-examine { right: -15%; font-size: 55px; }
+  .mural-action { left: -1%; font-size: 80px; bottom: 10%; }
+  .mural-think { right: 3%; font-size: 38px; }
+  .hall-statue { width: 30vw; right: -8%; opacity: .25; }
+  .statue-east { left: -9%; opacity: .16; }
+  .home h1 { font-size: 54px; }
+  .quotation-mural { mask-image: radial-gradient(ellipse 38% 46% at 50% 50%, #0000 50%, #000 100%); }
+}
+@media (max-width: 850px) {
+  .site-header { height: 92px; padding-inline: 30px; }
+  .main-home { min-height: calc(100svh - 173px); padding-bottom: 36px; }
+  .home-inner { max-width: 600px; }
+  .home h1 { font-size: 53px; }
+  .home-seal { margin-bottom: 20px; }
+  .home-subtitle { margin-top: 19px; margin-bottom: 27px; }
+  .hall-statue { bottom: 11%; width: 40vw; right: -13%; opacity: .22; }
+  .statue-east { left: -13%; bottom: 8%; opacity: .13; }
+  .mural-unity { left: -3%; font-size: 47px; }
+  .mural-think { right: -2%; font-size: 34px; }
+  .mural-examine { font-size: 50px; right: -18%; top: 14%; }
+  .mural-action { bottom: 9%; left: -10%; font-size: 66px; }
+  .site-footer { padding-inline: 30px; }
+  .site-footer > div:last-child { gap: 13px; }
+  .card-response > p { font-size: 13px; }
+  .card-response > p.card-question { font-size: 13px; }
+  .intro-sculpture { left: -4%; width: 60vw; }
+  .intro-words { left: 48%; right: 6%; }
+  .intro-words blockquote { font-size: 30px; }
+  .scene-zhuangzi .intro-sculpture { left: 45%; }
+  .scene-zhuangzi .intro-words { left: 8%; right: 45%; }
+}
+@media (max-width: 600px) {
+  .site-header { height: 86px; padding-inline: 23px; }
+  .brand { gap: 10px; }
+  .brand-name { font-size: 24px; }
+  .site-header nav { gap: 14px; }
+  .nav-link { font-size: 10px; }
+  .main-home { min-height: calc(100svh - 192px); padding: 26px 23px 31px; }
+  .home { padding: 0; }
+  .home-seal { gap: 14px; margin-bottom: 22px; }
+  .home-seal > svg { width: 26px; height: 28px; }
+  .home-seal > span { width: 36px; }
+  .home h1 { font-size: clamp(33px, 9.3vw, 46px); letter-spacing: .12em; padding-left: .12em; line-height: 1.5; }
+  .home-subtitle { font-size: 11px; line-height: 2.1; letter-spacing: .5px; margin: 19px auto 28px; }
+  .question-form { padding: 19px 17px 15px; border-radius: 3px; }
+  .question-form textarea { font-size: 15px; min-height: 91px; letter-spacing: .4px; }
+  .question-form-bottom { margin-top: 6px; }
+  .primary-button { font-size: 11px; padding: 12px 12px; gap: 10px; }
+  .input-hint { font-size: 8px; }
+  .suggestions { margin-top: 22px; }
+  .suggestions > div { column-gap: 14px; row-gap: 5px; }
+  .suggestions button { font-size: 9px; padding: 6px 0; gap: 6px; }
+  .suggestion-label { font-size: 9px; margin-bottom: 10px; }
+  .waiting-philosophers { margin-top: 23px; font-size: 9px; letter-spacing: 0; gap: 8px; }
+  .site-footer { padding: 15px 23px 20px; min-height: 106px; }
+  .site-footer > div:last-child { gap: 23px; }
+  .site-footer button { font-size: 9px; }
+  .vault-architecture { min-width: 850px; min-height: 920px; top: -9%; }
+  .quotation-mural { mask-image: radial-gradient(ellipse 52% 46% at 50% 51%, #0000 40%, #000 100%); }
+  .mural-unity { top: 15%; left: -7%; font-size: 42px; height: 49%; }
+  .mural-unity small { display: none; }
+  .mural-examine { top: 11%; right: -50%; font-size: 43px; }
+  .mural-action { bottom: 7%; left: -17%; font-size: 62px; }
+  .mural-think { right: -7%; bottom: 15%; font-size: 32px; height: 41%; }
+  .mural-full-quote { display: none; }
+  .hall-statue { width: 61vw; bottom: 13%; right: -28%; opacity: .23; }
+  .statue-east { left: -32%; bottom: 11%; opacity: .13; }
+  .atmosphere-vignette { background: linear-gradient(0deg, #141510, transparent 25%, transparent 85%, #14151066); }
+  .dust-field i:nth-child(n+13) { display: none; }
+  .light-shaft { width: 80%; left: 35%; }
+  .card-person { min-height: 0; }
+  .card-response > p { font-size: 13px; }
+  .card-response > p.card-question { font-size: 13px; }
+  .message-content p, .user-message p { font-size: 13px; }
+  .main-dialogue { min-height: calc(100svh - 192px); }
+  .intro-topline { top: 4%; left: 6%; right: 6%; font-size: 9px; letter-spacing: 1px; }
+  .intro-topline > button { font-size: 10px; gap: 8px; }
+  .intro-bottomline { left: 6%; right: 6%; bottom: 5%; font-size: 8px; gap: 15px; letter-spacing: 1px; }
+  .intro-bottomline > span:last-child { display: none; }
+  .intro-epoch { top: 16%; right: -18%; font-size: 142px; }
+  .intro-sculpture, .scene-zhuangzi .intro-sculpture { top: 10%; left: 8%; width: 84vw; height: 58%; opacity: .75; }
+  .intro-words, .scene-zhuangzi .intro-words { top: auto; left: 9%; right: 9%; bottom: 14%; transform: none; }
+  .intro-words { text-shadow: 0 2px 18px #10170f; }
+  .intro-era { font-size: 9px; margin-bottom: 15px; letter-spacing: 2px; }
+  .intro-words blockquote { font-size: 27px; line-height: 1.9; letter-spacing: .07em; }
+  .intro-citation { margin-top: 16px; gap: 6px; padding-left: 12px; }
+  .intro-citation > span { font-size: 14px; letter-spacing: 3px; }
+  .intro-citation > small { font-size: 8px; }
+  .intro-frame { inset: 14% 6% 11%; }
+  .intro-resolution > svg { width: 43px; height: 45px; }
+  .intro-resolution h2 { font-size: 75px; }
+  .intro-resolution > p { font-size: 13px; letter-spacing: 3px; }
+}
+@media (max-width: 359px) {
+  .main-home { padding-inline: 18px; }
+  .home h1 { font-size: 32px; }
+  .question-form { padding-inline: 14px; }
+  .input-hint { font-size: 7px; }
+  .primary-button { font-size: 10px; padding-inline: 9px; gap: 5px; }
+  .waiting-philosophers { font-size: 8px; gap: 6px; }
+  .intro-words blockquote { font-size: 24px; }
+}
+@media (max-height: 780px) and (min-width: 601px) {
+  .site-header { height: 80px; }
+  .main-home { min-height: calc(100svh - 143px); padding-block: 20px; }
+  .home h1 { font-size: 49px; line-height: 1.35; }
+  .home-seal { margin-bottom: 17px; }
+  .home-seal > svg { width: 25px; height: 27px; }
+  .home-subtitle { font-size: 12px; margin-top: 16px; margin-bottom: 22px; }
+  .question-form { padding: 19px 23px 15px; }
+  .question-form textarea { min-height: 62px; }
+  .suggestions { margin-top: 17px; }
+  .waiting-philosophers { margin-top: 21px; }
+  .site-footer { min-height: 63px; padding-top: 15px; padding-bottom: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thought-atmosphere * { animation: none !important; }
+  .mural-inscription { opacity: .17; }
+  .dust-field { display: none; }
+  .cinematic-intro, .cinematic-intro * { animation: none !important; }
+}

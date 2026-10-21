@@ -1,0 +1,59 @@
+.sound-toggle { position: relative; }
+.sound-toggle.sound-on { color: #d6bc7f; background: #c4a76b0c; }
+.sound-toggle.sound-on::after { content: ""; position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #d6bc7f; bottom: 1px; }
+
+.sound-settings { padding: 20px 21px 17px; margin-bottom: 26px; border: 1px solid #c4a76b33; background: linear-gradient(130deg, #c4a76b09, transparent 75%); border-radius: 3px; }
+.sound-settings-heading, .sound-option { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.sound-settings-title { display: flex; gap: 12px; align-items: center; color: var(--gold); }
+.sound-settings .sound-settings-title h3 { font-family: var(--serif); color: #dfceaa; font-size: 20px; letter-spacing: 2px; line-height: 1.4; }
+.sound-settings-title p { color: #aca995; font-size: 10px; line-height: 1.9; margin-top: 6px; }
+.sound-status { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 20px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+.sound-status > span { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; color: #b8b29f; }
+.sound-status i { width: 4px; height: 4px; border-radius: 50%; background: #717461; }
+.sound-status i.lit { background: #c4a76b; box-shadow: 0 0 8px #c4a76b33; }
+.sound-status meter { width: 87px; height: 4px; border: 0; background: #c4a76b13; border-radius: 0; }
+.sound-status meter::-webkit-meter-bar { border: 0; background: #c4a76b13; border-radius: 0; height: 4px; }
+.sound-status meter::-webkit-meter-optimum-value { background: #b9a16b; border-radius: 0; transition: width .2s; }
+.sound-status meter::-moz-meter-bar { background: #b9a16b; }
+.sound-option { padding-top: 18px; }
+.sound-option p { font-size: 10px; color: #aaa995; margin-top: 3px; line-height: 1.8; }
+.sound-volume { margin-top: 23px; }
+.sound-volume label { display: flex; align-items: center; justify-content: space-between; color: #c6c1ab; font-size: 11px; }
+.sound-volume output { color: #c4a76b; font-size: 10px; font-variant-numeric: tabular-nums; }
+.sound-volume input { display: block; width: 100%; height: 28px; margin: 8px 0 0; accent-color: #c4a76b; cursor: pointer; }
+.sound-volume input:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+.sound-settings-bottom { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 12px; }
+.sound-settings-bottom p { font-size: 9px; line-height: 1.9; color: #999b85; }
+.sound-preview { font-size: 10px; color: #d2bc87; gap: 6px; white-space: nowrap; min-height: 36px; }
+.sound-preview:disabled { opacity: .4; cursor: default; }
+.sound-error { font-size: 10px; line-height: 1.9; color: #d9b58c; margin-top: 15px; }
+.sound-notice { position: fixed; bottom: 70px; left: 50%; transform: translateX(-50%); z-index: 30; max-width: min(480px, calc(100vw - 32px)); width: max-content; padding: 12px 17px; border: 1px solid #c4a76b55; background: #25281ef5; color: #dfceaa; font-size: 11px; line-height: 1.9; box-shadow: 0 10px 40px #0004; }
+
+.intro-controls { display: flex; align-items: center; gap: 30px; }
+.intro-controls button { padding: 10px 0; display: inline-flex; align-items: center; gap: 10px; color: #d1bf96; font-size: 12px; letter-spacing: 1px; }
+.intro-controls .intro-sound { color: #a9aa92; }
+.intro-controls .intro-sound.active { color: #dbc28d; }
+.intro-sound-error { position: absolute; top: 12%; right: 5%; z-index: 11; max-width: 300px; text-align: right; color: #cfb993; font-size: 10px; line-height: 1.9; }
+
+@media (max-width: 600px) {
+  .site-header nav { gap: 11px; }
+  .site-header nav > .sound-toggle { margin-right: 0; width: 28px; min-height: 35px; }
+  .sound-settings { padding: 17px 15px 14px; margin-bottom: 23px; }
+  .sound-settings-title { gap: 10px; }
+  .sound-settings .sound-settings-title h3 { font-size: 19px; }
+  .sound-settings-title p, .sound-option p { font-size: 9px; }
+  .sound-status { margin-top: 17px; padding-bottom: 15px; }
+  .sound-option { padding-top: 15px; gap: 12px; }
+  .sound-option h3 { font-size: 12px; }
+  .intro-controls { gap: 17px; }
+  .intro-controls button { font-size: 10px; gap: 6px; letter-spacing: 0; }
+  .intro-sound-error { top: 10%; right: 6%; font-size: 9px; max-width: 230px; }
+}
+@media (max-width: 359px) {
+  .site-header { padding-inline: 18px; }
+  .site-header nav { gap: 8px; }
+  .sound-settings { padding-inline: 13px; }
+  .sound-settings-title > svg { display: none; }
+  .intro-topline > span { font-size: 8px; letter-spacing: 0; }
+  .intro-controls { gap: 13px; }
+}
